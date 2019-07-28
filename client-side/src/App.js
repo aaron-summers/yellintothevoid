@@ -2,12 +2,12 @@ import React from 'react';
 import './App.css';
 import API from './adapters/API';
 import Index from './components/Index';
-import { isUndefined } from 'util';
+
 
 class App extends React.Component {
 
   state = {
-    user: isUndefined
+    user: undefined
   }
 
   componentDidMount() {
