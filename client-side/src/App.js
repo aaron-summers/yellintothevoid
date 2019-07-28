@@ -7,7 +7,7 @@ import { isUndefined } from 'util';
 class App extends React.Component {
 
   state = {
-    user: isUndefined
+    user: undefined
   }
 
   componentDidMount() {
