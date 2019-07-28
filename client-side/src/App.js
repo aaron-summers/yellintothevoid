@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import API from './adapters/API';
-import Index from './components/Index';
+import Main from './components/Main';
 
 
 class App extends React.Component {
@@ -39,7 +39,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Index user={this.state.user} signUp={this.signUp} logOut={this.logOut} logIn={this.logIn} />
+        <Main user={this.state.user} signUp={this.signUp} logOut={this.logOut} logIn={this.logIn} />
       </div>
     )
   }
