@@ -1,16 +1,16 @@
-const endpoint = 'http://localhost:3000'
-const signUpURL = `${endpoint}/users`
-const loginURL = `${endpoint}/login`
+const endpoint = 'http://localhost:3000/api/v1'
+const signupUrl = `${endpoint}/users`
+const loginUrl = `${endpoint}/login`
 const postsUrl = `${endpoint}/posts`
 const validateUrl = `${endpoint}/validate`
 
-const jsonify = response => {
-    if (response.ok)
-        return response.json()
-    else
-        throw new Error(response.json())
+const jsonify = res => {
+    if (res.ok)  {
+        return res.json()
+     } else {
+        Promise.reject( Error(res.json()))
+     }
 }
-
 const handleServerError = response => console.error(response)
 
 const constructHeaders = (moreHeaders = {}) => (
@@ -20,7 +20,7 @@ const constructHeaders = (moreHeaders = {}) => (
     }
 )
 
-const signUp = (user) => fetch(signUpURL, {
+const signUp = (user) => fetch(signupUrl, {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json'
@@ -33,7 +33,8 @@ const signUp = (user) => fetch(signUpURL, {
     })
     .catch(handleServerError)
 
-const logIn = (user) => fetch(loginURL, {
+
+const logIn = (user) => fetch(loginUrl, {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json'
@@ -42,7 +43,7 @@ const logIn = (user) => fetch(loginURL, {
 }).then(jsonify)
 
 const validateUser = () => {
-    if(!localStorage.getItem('token')) return Promise.resolve({ error: 'no token' })
+    if (!localStorage.getItem('token')) return Promise.resolve({ error: 'no token' })
 
     return fetch(validateUrl, {
         headers: constructHeaders()
