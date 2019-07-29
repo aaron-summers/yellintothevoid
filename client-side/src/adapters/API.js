@@ -8,10 +8,13 @@ const jsonify = res => {
     if (res.ok)  {
         return res.json()
      } else {
-        Promise.reject( Error(res.json()))
+        return Promise.reject(alert('Invalid Login Attempt'))
      }
 }
-const handleServerError = response => console.error(response)
+const handleServerError = (err) => {
+    // console.error(res)
+    alert(err)
+}
 
 const constructHeaders = (moreHeaders = {}) => (
     {

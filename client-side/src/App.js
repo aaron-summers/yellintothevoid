@@ -14,7 +14,7 @@ class App extends React.Component {
     API.validateUser()
       .then(data => {
         if (data.error) {
-          console.error(data.error)
+          console.error("Not Logged In")
         } else {
           this.setState({ user: data })
         }

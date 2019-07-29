@@ -13,26 +13,47 @@ code {
     monospace;
 }
 
-#container {
+#main-container {
   height: 100vh;
+  width: auto;
   overflow: hidden;
   background-image: linear-gradient(-45deg, rgb(19, 19, 39), #000000 100%);
   background-blend-mode: darken;
 }
 
-#forms.card {
+/* #forms.card {
+  display: block;
   border-radius: 25px;
   color: #000000;
   margin: 0 auto;
   align-items: center;
-  width: 20rem;
-}
+  width: 50%;
+} */
 
-.form-control {
+
+/* .form-control {
   width: auto;
   margin: 10px;
-}
-
+} */
+/*
 .submit-btn {
   margin: 10px;
+}
+*/ 
+
+.brand-container {
+  min-height: 50vh;
+}
+
+
+.brand-text {
+  justify-content: center;
+}
+
+.signup-btn {
+  border-radius: 20px;
+}
+
+.login-btn {
+  border-radius: 20px;
 }
