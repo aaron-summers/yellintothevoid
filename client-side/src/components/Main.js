@@ -18,7 +18,7 @@ const Main = ({ user, signUp, logOut, logIn}) => {
     return (
         <div>
             {
-                user ? <div><button onClick={logOut}>Log out</button> <Container/></div> :
+                user ? <div><button onClick={logOut}>Log out</button> <Container user={user.user} /></div> :
             <div className="ui vertically divided grid">
                 <div className="one column row brand-container">
                     <div className="column brand-text">

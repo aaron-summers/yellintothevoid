@@ -16,7 +16,7 @@ code {
 #main-container {
   height: 100vh;
   width: auto;
-  overflow: hidden;
+  overflow: auto;
   background-image: linear-gradient(-45deg, rgb(19, 19, 39), #000000 100%);
   background-blend-mode: darken;
 }
@@ -56,4 +56,12 @@ code {
 
 .login-btn {
   border-radius: 20px;
+}
+
+.postsContainer {
+  display: grid;
+}
+
+.post{
+  overflow: auto; height: inherit;
 }

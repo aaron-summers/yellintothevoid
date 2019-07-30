@@ -62,10 +62,19 @@ const clearToken = () => localStorage.removeItem('token')
 
 const getPosts = () => fetch(postsUrl).then(response => response.json())
 
+const postPost = post => fetch(postsUrl, {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(post)
+}).then(res => res.json())
+
 export default {
     signUp,
     logIn,
     validateUser,
     clearToken, 
-    getPosts
+    getPosts,
+    postPost
 }
