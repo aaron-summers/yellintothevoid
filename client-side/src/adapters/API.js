@@ -60,9 +60,12 @@ const validateUser = () => {
 
 const clearToken = () => localStorage.removeItem('token')
 
+const getPosts = () => fetch(postsUrl).then(response => response.json())
+
 export default {
     signUp,
     logIn,
     validateUser,
-    clearToken
+    clearToken, 
+    getPosts
 }
