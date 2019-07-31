@@ -58,10 +58,33 @@ code {
   border-radius: 20px;
 }
 
-.postsContainer {
-  display: grid;
+.container {
+  max-width: 50%;
+  
 }
 
-.post{
-  overflow: auto; height: inherit;
+.containerWidth {
+  align-content: center;
+  
+}
+
+.postForm {
+  grid-column-start: 3;
+  grid-row-start: 1;
+}
+
+.postsContainer {
+  padding-bottom: 30px;
+}
+
+.cards {
+  color: black;
+}
+
+.submitButton {
+  padding-top: 10px;
+}
+
+.logoutButton {
+  justify-self: right;
 }

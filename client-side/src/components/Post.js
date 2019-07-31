@@ -6,7 +6,7 @@ class Post extends React.Component {
   render() {
     return (
         <div className="postsContainer">
-            <Card>
+            <Card className="cards">
               <Card.Header>{this.props.user.username}</Card.Header>
               <Card.Body>
                 <Card.Title>{this.props.content}</Card.Title>

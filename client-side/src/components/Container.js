@@ -22,16 +22,18 @@ class Container extends React.Component {
 
   render() {
     return (
-      <>
-        <div>
-          <PostForm addPost={this.addPost} user={this.props.user} />
+      <div className="container">
+        <div className="containerWidth">
+          <div className="postForm">
+            <PostForm addPost={this.addPost} user={this.props.user} />
+          </div>
+          <div className="posts">
+            {this.state.posts.map(post => (
+              <Post {...post} />
+            ))}
+          </div>
         </div>
-        <div>
-          {this.state.posts.map(post => (
-            <Post {...post} />
-          ))}
-        </div>
-      </>
+      </div>
     );
   }
 }
