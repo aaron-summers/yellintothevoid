@@ -6,7 +6,7 @@ const LogIn = ({ submit, header }) => {
     const [password, setPassword] = useState('')
 
     return (
-        <div id="forms" className="card">
+        <div id="login-form" className="card">
             <div className="form-group">
                 <form onSubmit={event => {
                     event.preventDefault();
@@ -14,7 +14,7 @@ const LogIn = ({ submit, header }) => {
                     setUsername('')
                     setPassword('')
                 }}>
-                    <span className="card-title">{header}</span>
+                    {/* <span className="card-title">{header}</span> */}
                     <input className="form-control" 
                         placeholder="Username" 
                         type="username" 

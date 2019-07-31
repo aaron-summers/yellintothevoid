@@ -21,14 +21,18 @@ code {
   background-blend-mode: darken;
 }
 
-/* #forms.card {
-  display: block;
+#signup-form.card, #login-form.card {
   border-radius: 25px;
   color: #000000;
   margin: 0 auto;
   align-items: center;
-  width: 50%;
-} */
+  /* width: 50%; */
+}
+
+.signup-modal, .login-modal div {
+  border-radius: 15px;
+  color: #000000;
+}
 
 
 /* .form-control {
@@ -40,6 +44,10 @@ code {
   margin: 10px;
 }
 */ 
+.ui[class*="vertically divided"].grid>.row {
+  margin-top: 25%;
+  margin-bottom: 0;
+}
 
 .brand-container {
   min-height: 50vh;
@@ -50,10 +58,16 @@ code {
   justify-content: center;
 }
 
-.signup-btn {
-  border-radius: 20px;
+.signup-btn, .submit-btn {
+  /* margin-left: 30rem; */
+  border-radius: 10px;
+}
+
+.submit-btn {
+  margin: 0 auto; 
 }
 
 .login-btn {
+  /* margin-right: 30rem; */
   border-radius: 20px;
 }

@@ -17,7 +17,7 @@ const SignUp = ({ submit, header }) => {
                     setPassword('')
                 }}>
                 <div className="form-group">
-                    <span className="card-title">{header}</span>
+                    {/* <span className="card-title">{header}</span> */}
                     <input className="form-control" 
                         placeholder="Username" 
                         type="username" 
