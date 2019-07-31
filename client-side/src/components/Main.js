@@ -19,8 +19,7 @@ const Main = ({ user, signUp, logOut, logIn}) => {
     return (
         <div>
             {
-                user ? <div><button onClick={logOut}>Log out</button> <Container/></div> :
-                /* <Segment basic raised> */
+                user ? <div><button onClick={logOut}>Log out</button> <Container user={user.user}/></div> :
             <div className="ui stickable vertically divided grid form-div">
                 {/* <div className="one column row brand-container">
                     <div className="ui stretched middle aligned three column grid">
@@ -57,7 +56,6 @@ const Main = ({ user, signUp, logOut, logIn}) => {
                     </div>
                 </div>
             </div>
-            /*</Segment>*/
             }
         </div>
     )

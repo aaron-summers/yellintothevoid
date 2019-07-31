@@ -1,27 +1,38 @@
-import React from 'react'
-import API from '../adapters/API'
-import Post from './Post';
-// import { Card } from 'semantic-ui-react';
+import React from "react";
+import API from "../adapters/API";
+import Post from "./Post";
+import PostForm from "./Form";
 
 class Container extends React.Component {
+  state = {
+    posts: []
+  };
 
-    state = {
-        posts: []
-    }
+  componentDidMount() {
+    API.getPosts().then(posts => this.setState({ posts }));
+  }
 
-    componentDidMount() {
-        API.getPosts()
-            .then(posts => this.setState({ posts }))
-    }
+  addPost = newPost => {
+    API.postPost(newPost).then(post =>
+      this.setState({
+        posts: [...this.state.posts, post]
+      })
+    );
+  };
 
-    render() {
-        return (
-            <div>
-                {
-                    this.state.posts.map(post => <Post {...post} />)
-                }
-            </div>
-        )
-    }
+  render() {
+    return (
+      <>
+        <div>
+          <PostForm addPost={this.addPost} user={this.props.user} />
+        </div>
+        <div>
+          {this.state.posts.map(post => (
+            <Post {...post} user={this.props.user} />
+          ))}
+        </div>
+      </>
+    );
+  }
 }
-export default Container
+export default Container;
