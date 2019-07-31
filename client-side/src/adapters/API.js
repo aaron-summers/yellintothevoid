@@ -2,6 +2,7 @@ const endpoint = 'http://localhost:3000/api/v1'
 const signupUrl = `${endpoint}/users`
 const loginUrl = `${endpoint}/login`
 const postsUrl = `${endpoint}/posts`
+const commentsUrl = `${endpoint}/comments`
 const validateUrl = `${endpoint}/validate`
 
 const jsonify = res => {
@@ -70,11 +71,17 @@ const postPost = post => fetch(postsUrl, {
     body: JSON.stringify(post)
 }).then(res => res.json())
 
+const getComments = () => {
+    return fetch(commentsUrl)
+        .then(res => res.json())
+}
+
 export default {
     signUp,
     logIn,
     validateUser,
     clearToken, 
     getPosts,
-    postPost
+    postPost,
+    getComments
 }

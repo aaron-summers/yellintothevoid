@@ -1,6 +1,6 @@
 import React from "react";
-import API from "../adapters/API";
 import Card from "react-bootstrap/Card";
+import CommentIndex from "./CommentIndex"
 
 class Post extends React.Component {
   render() {
@@ -11,6 +11,9 @@ class Post extends React.Component {
               <Card.Body>
                 <Card.Title>{this.props.content}</Card.Title>
               </Card.Body>
+              <div className="comments-container">
+                <CommentIndex comments={this.props.comments}/>
+              </div>
             </Card>
         </div>
     );

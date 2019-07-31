@@ -3,7 +3,7 @@ class Api::V1::PostsController < ApplicationController
     def create
         post = Post.create post_params
       #   post.user = @current_user
-        puts post.user
+        # puts post.user
         if post.valid?
             post.save
             render json: post, status: :created

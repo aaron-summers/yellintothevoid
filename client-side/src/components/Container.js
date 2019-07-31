@@ -33,7 +33,12 @@ class Container extends React.Component {
             ))}
           </div>
         </div>
-      </div>
+        <div>
+          {this.state.posts.map(post => (
+            <Post {...post} user={this.props.user} />
+          ))}
+        </div>
+        </div>
     );
   }
 }

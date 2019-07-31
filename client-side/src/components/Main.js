@@ -5,6 +5,7 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Container from './Container';
 import NavBar from './NavBar';
+import { Divider, Segment } from 'semantic-ui-react';
 
 const Main = ({ user, signUp, logOut, logIn}) => {
     const [showSignUp, setShowSignUp] = useState(false);
@@ -27,10 +28,11 @@ const Main = ({ user, signUp, logOut, logIn}) => {
                     </div>
                 </div>
 
+
                 <div className="two column row form-container">
                     <div className="column">
-                    <Button className="signup-btn" variant="primary" onClick={handleSignUpShow}>Sign Up</Button>
-                    <Modal show={showSignUp} onHide={handleSignUpClose} footer={null} centered>
+                    <a href="#" className="signup-btn" variant="primary" onClick={handleSignUpShow}>Sign Up</a>
+                    <Modal dialogClassName="signup-modal" show={showSignUp} onHide={handleSignUpClose} footer={null} centered>
                         <Modal.Header closeButton>
                             <Modal.Title>Sign Up</Modal.Title>
                         </Modal.Header>
@@ -40,12 +42,11 @@ const Main = ({ user, signUp, logOut, logIn}) => {
                     </Modal>
                     </div>
 
-
                     <div className="column">
-                    <Button className="login-btn" variant="success" onClick={handleLogInShow}>Log In</Button>
-                    <Modal show={showLogIn} onHide={handleLogInClose} footer={null} centered>
+                    <a href="#" className="login-btn" variant="success" onClick={handleLogInShow}>Log In</a>
+                    <Modal dialogClassName="login-modal" show={showLogIn} onHide={handleLogInClose} footer={null} centered>
                         <Modal.Header closeButton>
-                            <Modal.Title>Log In</Modal.Title>
+                            <Modal.Title centered>Log In</Modal.Title>
                         </Modal.Header>
                         <Modal.Body>                    
                             <LogIn submit={logIn} header={"Log in: "} />
