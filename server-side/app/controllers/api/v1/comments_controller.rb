@@ -1,6 +1,5 @@
 class Api::V1::CommentsController < ApplicationController
-  # before_action :set_comment, only: [:show, :update, :destroy]
-  # POST /comments
+
   def create
     comment = Comment.create comment_params
 
@@ -24,12 +23,7 @@ class Api::V1::CommentsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    # def set_comment
-    #   @comment = Comment.find(params[:id])
-    # end
-
-    # Only allow a trusted parameter "white list" through.
+  
     def comment_params
       params.require(:comment).permit(:content, :user_id, :post_id)
     end

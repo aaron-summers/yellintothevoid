@@ -81,6 +81,16 @@ const getComments = () => {
         .then(res => res.json())
 }
 
+const addComment = (comment) => {
+    fetch(commentsUrl, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(comment)
+    }).then(res => res.json())
+}
+
 export default {
     signUp,
     logIn,
@@ -88,5 +98,6 @@ export default {
     clearToken, 
     getPosts,
     postPost,
-    getComments
+    getComments,
+    addComment
 }
