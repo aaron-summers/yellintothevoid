@@ -43,11 +43,11 @@ class PostForm extends React.Component {
                 type="text"
                 name="content"
                 value={this.state.content}
-                placeholder="scream"
+                placeholder="Let It Rip"
               />
               <div className="submitButton">
               <Button variant="primary" type="submit" >
-                Submit
+                Scream
               </Button>
               </div>
             </Form.Group>

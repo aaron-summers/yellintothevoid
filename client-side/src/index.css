@@ -44,10 +44,10 @@ code {
   margin: 10px;
 }
 */ 
-.ui[class*="vertically divided"].grid>.row {
+/* .ui[class*="vertically divided"].grid>.row {
   margin-top: 25%;
   margin-bottom: 0;
-}
+} */
 
 .brand-container {
   min-height: 50vh;
