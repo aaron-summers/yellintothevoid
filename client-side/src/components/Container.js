@@ -57,12 +57,12 @@ class Container extends React.Component {
         <button className="btn btn-warning" onClick={this.handleClick}>Toggle</button>
         <div className="containerWidth">
           <div className="postForm">
-            <PostForm addPost={this.addPost} user={this.props.user} />
+            <PostForm addPost={this.addPost} currentUser={this.props.user} />
           </div>
         </div>
         <div>
           {this.state.posts.map(post => (
-            <Post {...post} user={this.props.user}/>
+            <Post {...post} currentUser={this.props.user}/>
           ))}
         </div>
       </div>

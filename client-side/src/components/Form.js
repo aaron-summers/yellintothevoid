@@ -5,7 +5,7 @@ import Card from "react-bootstrap/Card";
 
 class PostForm extends React.Component {
   state = {
-    user_id: this.props.user.id,
+    user_id: this.props.currentUser.id,
     content: "",
     flags: 0
   };
@@ -19,7 +19,7 @@ class PostForm extends React.Component {
   submitForm = () => {
     this.props.addPost(this.state);
     this.setState({
-      user_id: this.props.user.id,
+      user_id: this.props.currentUser.id,
       content: "",
       flags: 0
     });

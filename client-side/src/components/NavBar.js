@@ -8,7 +8,6 @@ class NavBar extends React.Component {
         <div>
           Screamer
           <div className="logoutButton">
-            {this.props.user.username}
             <button onClick={this.props.clickHandler}>Log out</button>
           </div>
         </div>

@@ -2,10 +2,8 @@ import React, { useState } from 'react';
 import LogIn from './LogIn';
 import SignUp from './SignUp'
 import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button';
 import Container from './Container';
 import NavBar from './NavBar';
-import { Divider, Segment } from 'semantic-ui-react';
 
 const Main = ({ user, signUp, logOut, logIn}) => {
     const [showSignUp, setShowSignUp] = useState(false);
@@ -20,7 +18,7 @@ const Main = ({ user, signUp, logOut, logIn}) => {
     return (
         <div>
             {
-                user ? <div><NavBar clickHandler={logOut} user={user.user}/> <Container user={user.user} /></div> :
+                user ? <div><NavBar clickHandler={logOut} user={user.user}/> <Container user={user} /></div> :
             <div className="ui vertically divided grid">
                 <div className="one column row brand-container">
                     <div className="column brand-text">

@@ -45,6 +45,11 @@ const logIn = (user) => fetch(loginUrl, {
     },
     body: JSON.stringify({ user })
 }).then(jsonify)
+    .then(data => {
+        localStorage.setItem('token', data.token)
+        return data.user
+    })
+    .catch(handleServerError)
 
 const validateUser = () => {
     if (!localStorage.getItem('token')) return Promise.resolve({ error: 'no token' })
